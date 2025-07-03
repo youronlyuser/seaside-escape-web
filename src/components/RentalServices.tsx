@@ -10,19 +10,19 @@ const RentalServices = () => {
       icon: Car,
       title: t('services.cars'),
       description: t('services.cars.desc'),
-      features: ["Economy to luxury vehicles", "Free delivery to villa", "GPS included"]
+      features: [t('services.cars.feature1'), t('services.cars.feature2'), t('services.cars.feature3')]
     },
     {
       icon: Compass,
       title: t('services.boats'),
       description: t('services.boats.desc'),
-      features: ["Half & full day tours", "Sunset cruises", "Snorkeling equipment"]
+      features: [t('services.boats.feature1'), t('services.boats.feature2'), t('services.boats.feature3')]
     },
     {
       icon: '🏄‍♂️',
       title: t('services.watersports'),
       description: t('services.watersports.desc'),
-      features: ["Jet ski rentals", "Paddleboarding", "Scuba diving lessons"]
+      features: [t('services.watersports.feature1'), t('services.watersports.feature2'), t('services.watersports.feature3')]
     }
   ];
 

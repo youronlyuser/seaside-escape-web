@@ -7,36 +7,36 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Is Wi-Fi available?",
-      answer: "Yes, high-speed Wi-Fi is available throughout the villa, perfect for staying connected or working remotely with a view of the Aegean Sea."
+      question: t('faq.wifi.q'),
+      answer: t('faq.wifi.a')
     },
     {
-      question: "Are pets allowed?",
-      answer: "We welcome well-behaved pets! Please let us know in advance about your furry companions so we can prepare the villa accordingly. Additional cleaning fees may apply."
+      question: t('faq.pets.q'),
+      answer: t('faq.pets.a')
     },
     {
-      question: "How do I get the keys?",
-      answer: "Our local concierge will meet you at the villa for check-in between 3:00 PM - 8:00 PM. For arrivals outside these hours, we'll arrange a secure key pickup location nearby."
+      question: t('faq.keys.q'),
+      answer: t('faq.keys.a')
     },
     {
-      question: "Are there sea views?",
-      answer: "Absolutely! The villa offers stunning panoramic views of the Aegean Sea from multiple rooms, the terrace, and the infinity pool area. Wake up to breathtaking sunrises over the water."
+      question: t('faq.views.q'),
+      answer: t('faq.views.a')
     },
     {
-      question: "Is parking available?",
-      answer: "Yes, the villa includes private parking for up to 2 vehicles. The parking area is secure and conveniently located adjacent to the main entrance."
+      question: t('faq.parking.q'),
+      answer: t('faq.parking.a')
     },
     {
-      question: "What's included in the rental?",
-      answer: "Your stay includes all linens and towels, fully equipped kitchen, complimentary Wi-Fi, pool maintenance, weekly housekeeping, and 24/7 concierge support for any needs during your stay."
+      question: t('faq.included.q'),
+      answer: t('faq.included.a')
     },
     {
-      question: "How far is the nearest beach?",
-      answer: "The nearest beach is just a 5-minute walk down a scenic coastal path. Several other beautiful beaches are within 10-15 minutes by car or scooter."
+      question: t('faq.beach.q'),
+      answer: t('faq.beach.a')
     },
     {
-      question: "Is the pool heated?",
-      answer: "The infinity pool is available year-round. During cooler months (November-March), heating is available upon request for an additional fee to ensure your comfort."
+      question: t('faq.heated.q'),
+      answer: t('faq.heated.a')
     }
   ];
 

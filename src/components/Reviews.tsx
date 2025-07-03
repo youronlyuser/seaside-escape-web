@@ -6,11 +6,11 @@ const Reviews = () => {
   const { t } = useLanguage();
 
   const review = {
-    name: "Maria & James",
-    location: "London, UK",
+    name: t('reviews.name'),
+    location: t('reviews.location'),
     rating: 5,
-    text: "Absolutely magical! The villa exceeded all our expectations. Waking up to the Aegean Sea every morning was pure bliss. Sarah was incredibly helpful and made our stay seamless.",
-    highlight: "The infinity pool and sunset views"
+    text: t('reviews.text'),
+    highlight: t('reviews.loved')
   };
 
   const renderStars = (rating: number) => {

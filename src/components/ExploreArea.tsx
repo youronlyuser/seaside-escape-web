@@ -7,36 +7,36 @@ const ExploreArea = () => {
 
   const attractions = [
     {
-      title: "Local Beaches",
-      description: "Soft sand, turquoise water",
+      title: t('explore.beaches'),
+      description: t('explore.beaches.desc'),
       image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      title: "Hidden Trails", 
-      description: "Olive groves and ruins",
+      title: t('explore.trails'), 
+      description: t('explore.trails.desc'),
       image: "https://images.unsplash.com/photo-1601041178049-adf2d1a6b9c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      title: "Village Markets",
-      description: "Fresh produce, handmade goods", 
+      title: t('explore.markets'),
+      description: t('explore.markets.desc'), 
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
   const restaurants = [
     {
-      name: "Taverna Akrogiali",
-      specialty: "Fresh seafood by the harbor",
+      name: t('explore.taverna'),
+      specialty: t('explore.taverna.desc'),
       image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "Olive Garden Bistro", 
-      specialty: "Traditional Greek cuisine",
+      name: t('explore.bistro'), 
+      specialty: t('explore.bistro.desc'),
       image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "Sunset Terrace",
-      specialty: "Mediterranean fusion",
+      name: t('explore.terrace'),
+      specialty: t('explore.terrace.desc'),
       image: "https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
     }
   ];

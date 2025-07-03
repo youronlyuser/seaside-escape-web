@@ -6,18 +6,18 @@ const Amenities = () => {
   const { t } = useLanguage();
 
   const amenities = [
-    { icon: Wifi, label: "Free Wi-Fi", description: "High-speed internet throughout" },
-    { icon: Heart, label: "Smart TV", description: "Netflix & streaming ready" },
-    { icon: Car, label: "Fully Equipped Kitchen", description: "Cook like a local chef" },
-    { icon: Bed, label: "Fireplace", description: "Cozy evening ambiance" },
-    { icon: Wifi, label: "Private Pool", description: "Infinity pool with sea views" },
-    { icon: Heart, label: "Hot Tub", description: "Relax under the stars" },
-    { icon: Car, label: "Secure Access", description: "Safe & private entrance" },
-    { icon: Bed, label: "Concierge Service", description: "24/7 guest support" },
-    { icon: Wifi, label: "Pet Friendly", description: "Bring your furry friends" },
-    { icon: Heart, label: "Outdoor Dining", description: "Al fresco dining setup" },
-    { icon: Car, label: "Bicycle Rental", description: "Explore the island" },
-    { icon: Bed, label: "Air Conditioning", description: "Climate control comfort" },
+    { icon: Wifi, label: t('amenities.wifi'), description: t('amenities.wifi.desc') },
+    { icon: Heart, label: t('amenities.smarttv'), description: t('amenities.smarttv.desc') },
+    { icon: Car, label: t('amenities.kitchen'), description: t('amenities.kitchen.desc') },
+    { icon: Bed, label: t('amenities.fireplace'), description: t('amenities.fireplace.desc') },
+    { icon: Wifi, label: t('amenities.pool'), description: t('amenities.pool.desc') },
+    { icon: Heart, label: t('amenities.hottub'), description: t('amenities.hottub.desc') },
+    { icon: Car, label: t('amenities.security'), description: t('amenities.security.desc') },
+    { icon: Bed, label: t('amenities.concierge'), description: t('amenities.concierge.desc') },
+    { icon: Wifi, label: t('amenities.petfriendly'), description: t('amenities.petfriendly.desc') },
+    { icon: Heart, label: t('amenities.outdoor'), description: t('amenities.outdoor.desc') },
+    { icon: Car, label: t('amenities.bicycle'), description: t('amenities.bicycle.desc') },
+    { icon: Bed, label: t('amenities.ac'), description: t('amenities.ac.desc') },
   ];
 
   return (
