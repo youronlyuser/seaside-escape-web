@@ -5,14 +5,19 @@ import { useState } from 'react';
 const RateExperience = () => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
-  const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (rating >= 4) {
+      // Redirect to Google My Business page for 4-5 star ratings
+      window.open('https://g.page/r/YOUR_GOOGLE_MY_BUSINESS_ID/review', '_blank');
+    }
+    
     setSubmitted(true);
     // Here you would typically send the data to your backend
-    console.log('Rating:', rating, 'Feedback:', feedback);
+    console.log('Rating:', rating);
   };
 
   const renderInteractiveStars = () => {
@@ -80,27 +85,13 @@ const RateExperience = () => {
               </div>
               {rating > 0 && (
                 <p className="font-inter text-aegean-600 font-medium">
-                  {rating === 1 && "We'd love to improve - please tell us more below."}
-                  {rating === 2 && "Thank you for your feedback - how can we do better?"}
-                  {rating === 3 && "Thanks for your rating - what could have been better?"}
-                  {rating === 4 && "Great! What made your stay enjoyable?"}
-                  {rating === 5 && "Wonderful! What did you love most about your stay?"}
+                  {rating === 1 && "We'd love to improve - thank you for your feedback."}
+                  {rating === 2 && "Thank you for your feedback - we'll work to do better."}
+                  {rating === 3 && "Thanks for your rating - we appreciate your input."}
+                  {rating === 4 && "Great! Thank you for your positive feedback."}
+                  {rating === 5 && "Wonderful! We're thrilled you had an amazing stay."}
                 </p>
               )}
-            </div>
-
-            <div className="mb-6">
-              <label htmlFor="feedback" className="block font-inter font-semibold text-gray-800 mb-3">
-                What did you love most? (Optional)
-              </label>
-              <textarea
-                id="feedback"
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
-                placeholder="Share your favorite moments or suggestions..."
-                className="w-full p-4 border border-gray-300 rounded-lg font-inter text-gray-700 focus:outline-none focus:ring-2 focus:ring-aegean-500 focus:border-transparent resize-none"
-                rows={4}
-              />
             </div>
 
             <div className="text-center">

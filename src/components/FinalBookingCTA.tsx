@@ -35,9 +35,6 @@ const FinalBookingCTA = () => {
           <button className="bg-sand-500 hover:bg-sand-600 text-white font-inter font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
             Book on Booking.com
           </button>
-          <button className="border-2 border-white text-white hover:bg-white hover:text-aegean-800 font-inter font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-            Direct Booking
-          </button>
         </div>
 
         {/* Social Media Icons */}
