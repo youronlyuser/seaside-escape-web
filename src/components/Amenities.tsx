@@ -1,7 +1,10 @@
 
 import { Wifi, Heart, Car, Bed } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Amenities = () => {
+  const { t } = useLanguage();
+
   const amenities = [
     { icon: Wifi, label: "Free Wi-Fi", description: "High-speed internet throughout" },
     { icon: Heart, label: "Smart TV", description: "Netflix & streaming ready" },
@@ -22,10 +25,10 @@ const Amenities = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Luxury Amenities
+            {t('amenities.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Everything you need for the perfect Mediterranean getaway
+            {t('amenities.subtitle')}
           </p>
         </div>
 

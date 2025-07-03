@@ -1,5 +1,9 @@
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -15,15 +19,15 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 animate-fade-in">
         <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Experience Greek
+          {t('hero.title')}
           <br />
-          <span className="text-sand-300">Island Luxury</span>
+          <span className="text-sand-300">{t('hero.subtitle')}</span>
         </h1>
         <p className="font-inter text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed">
-          Wake up to the sea breeze and endless Aegean views in our beautiful Mediterranean escape.
+          {t('hero.description')}
         </p>
         <button className="bg-aegean-600 hover:bg-aegean-700 text-white font-inter font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-          Book Your Escape
+          {t('hero.cta')}
         </button>
       </div>
 

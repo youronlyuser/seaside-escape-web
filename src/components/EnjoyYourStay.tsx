@@ -1,14 +1,18 @@
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 const EnjoyYourStay = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-sand-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Enjoy Your Stay
+            {t('enjoy.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Immerse yourself in the authentic Greek island experience
+            {t('enjoy.subtitle')}
           </p>
         </div>
 
@@ -22,13 +26,13 @@ const EnjoyYourStay = () => {
           ></div>
           <div className="space-y-6">
             <h3 className="font-playfair text-3xl font-bold text-gray-800">
-              Relax by the Aegean Breeze
+              {t('enjoy.relax.title')}
             </h3>
             <p className="font-inter text-lg text-gray-600 leading-relaxed">
-              Step onto your private terrace and feel the gentle Mediterranean wind carry the scent of wild herbs and sea salt. Watch the sun paint the sky in shades of gold and rose as fishing boats return to harbor, their lights twinkling like stars on the water.
+              {t('enjoy.relax.desc1')}
             </p>
             <p className="font-inter text-lg text-gray-600 leading-relaxed">
-              Our infinity pool seems to merge with the horizon, creating the perfect spot for morning swims or evening contemplation. The sound of waves below provides nature's own soundtrack to your island retreat.
+              {t('enjoy.relax.desc2')}
             </p>
           </div>
         </div>
@@ -37,13 +41,13 @@ const EnjoyYourStay = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 md:order-2">
             <h3 className="font-playfair text-3xl font-bold text-gray-800">
-              Entertain in Style
+              {t('enjoy.entertain.title')}
             </h3>
             <p className="font-inter text-lg text-gray-600 leading-relaxed">
-              The villa's open-plan design seamlessly blends indoor and outdoor living, featuring handcrafted furniture, local ceramics, and textiles that celebrate Greek artisanship. Natural stone walls and whitewashed surfaces create the perfect backdrop for memorable gatherings.
+              {t('enjoy.entertain.desc1')}
             </p>
             <p className="font-inter text-lg text-gray-600 leading-relaxed">
-              Host sunset dinners on the spacious terrace, where the outdoor kitchen makes al fresco dining effortless. The gentle evening light filtering through olive branches creates an atmosphere that transforms every meal into a celebration.
+              {t('enjoy.entertain.desc2')}
             </p>
           </div>
           <div 

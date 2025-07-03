@@ -1,8 +1,10 @@
 
 import { Star } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const RateExperience = () => {
+  const { t } = useLanguage();
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
@@ -51,10 +53,10 @@ const RateExperience = () => {
           <div className="max-w-2xl mx-auto bg-green-50 rounded-2xl p-12">
             <div className="text-6xl mb-6">🙏</div>
             <h2 className="font-playfair text-3xl font-bold text-gray-800 mb-4">
-              Thank You!
+              {t('rate.thanks')}
             </h2>
             <p className="font-inter text-lg text-gray-600">
-              Your feedback helps us continue providing exceptional experiences for our guests.
+              {t('rate.thanks.desc')}
             </p>
           </div>
         </div>
@@ -67,10 +69,10 @@ const RateExperience = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Rate Your Experience
+            {t('rate.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Help future guests by sharing your thoughts about Seaside Home
+            {t('rate.subtitle')}
           </p>
         </div>
 
@@ -78,7 +80,7 @@ const RateExperience = () => {
           <form onSubmit={handleSubmit} className="bg-sand-50 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-8">
               <h3 className="font-playfair text-2xl font-bold text-gray-800 mb-6">
-                How was your stay?
+                {t('rate.question')}
               </h3>
               <div className="flex justify-center gap-2 mb-6">
                 {renderInteractiveStars()}
@@ -100,7 +102,7 @@ const RateExperience = () => {
                 disabled={rating === 0}
                 className="bg-aegean-600 hover:bg-aegean-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-inter font-semibold px-8 py-3 rounded-full transition-colors duration-300"
               >
-                Submit Review
+                {t('rate.submit')}
               </button>
             </div>
           </form>

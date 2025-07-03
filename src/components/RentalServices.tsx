@@ -1,24 +1,27 @@
 
 import { Car, Compass } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const RentalServices = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Car,
-      title: "Car Rentals",
-      description: "Explore the island at your own pace with our trusted rental partners",
+      title: t('services.cars'),
+      description: t('services.cars.desc'),
       features: ["Economy to luxury vehicles", "Free delivery to villa", "GPS included"]
     },
     {
       icon: Compass,
-      title: "Boat Tours",
-      description: "Discover hidden coves and pristine beaches accessible only by sea",
+      title: t('services.boats'),
+      description: t('services.boats.desc'),
       features: ["Half & full day tours", "Sunset cruises", "Snorkeling equipment"]
     },
     {
       icon: '🏄‍♂️',
-      title: "Water Sports",
-      description: "Thrilling adventures on the crystal-clear Aegean waters",
+      title: t('services.watersports'),
+      description: t('services.watersports.desc'),
       features: ["Jet ski rentals", "Paddleboarding", "Scuba diving lessons"]
     }
   ];
@@ -28,10 +31,10 @@ const RentalServices = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Rental Services & Experiences
+            {t('services.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Enhance your stay with curated experiences and convenient services
+            {t('services.subtitle')}
           </p>
         </div>
 

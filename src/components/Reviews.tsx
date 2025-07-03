@@ -1,7 +1,10 @@
 
 import { Star } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Reviews = () => {
+  const { t } = useLanguage();
+
   const review = {
     name: "Maria & James",
     location: "London, UK",
@@ -21,10 +24,10 @@ const Reviews = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Guest Reviews
+            {t('reviews.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Hear from our guests about their unforgettable experiences
+            {t('reviews.subtitle')}
           </p>
         </div>
 
@@ -39,7 +42,7 @@ const Reviews = () => {
               </blockquote>
               <div className="bg-aegean-50 rounded-lg p-4 mb-6">
                 <p className="font-inter text-sm text-aegean-700 font-medium">
-                  What they loved most: {review.highlight}
+                  {t('reviews.highlight')} {review.highlight}
                 </p>
               </div>
               <div>

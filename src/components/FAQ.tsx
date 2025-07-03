@@ -1,7 +1,10 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FAQ = () => {
+  const { t } = useLanguage();
+
   const faqs = [
     {
       question: "Is Wi-Fi available?",
@@ -42,10 +45,10 @@ const FAQ = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Frequently Asked Questions
+            {t('faq.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Everything you need to know about your stay at Seaside Home
+            {t('faq.subtitle')}
           </p>
         </div>
 

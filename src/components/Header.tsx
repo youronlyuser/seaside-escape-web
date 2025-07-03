@@ -1,9 +1,13 @@
 
 import { useState, useEffect } from 'react';
+import { Languages } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +19,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Your Host', href: '#host' },
-    { name: 'The Villa', href: '#villa' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Explore', href: '#explore' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.host'), href: '#host' },
+    { name: t('nav.villa'), href: '#villa' },
+    { name: t('nav.gallery'), href: '#gallery' },
+    { name: t('nav.explore'), href: '#explore' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -28,6 +32,10 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'el' : 'en');
   };
 
   return (
@@ -45,7 +53,7 @@ const Header = () => {
             onClick={() => handleNavClick('#hero')}
             className="font-playfair text-2xl font-bold text-aegean-800 hover:opacity-80 transition-opacity"
           >
-            Seaside Home
+            {t('logo')}
           </button>
 
           {/* Desktop Navigation */}
@@ -61,6 +69,18 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            
+            {/* Language Toggle */}
+            <div className="flex items-center space-x-2 ml-4">
+              <Languages className={`w-4 h-4 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
+              <span className={`text-sm font-inter ${isScrolled ? 'text-gray-700' : 'text-white'}`}>EN</span>
+              <Switch
+                checked={language === 'el'}
+                onCheckedChange={toggleLanguage}
+                className="data-[state=checked]:bg-aegean-600"
+              />
+              <span className={`text-sm font-inter ${isScrolled ? 'text-gray-700' : 'text-white'}`}>EL</span>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -92,6 +112,23 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            
+            {/* Mobile Language Toggle */}
+            <div className="flex items-center justify-between py-2 mt-2 border-t border-gray-200">
+              <div className="flex items-center space-x-2">
+                <Languages className="w-4 h-4 text-gray-700" />
+                <span className="text-sm font-inter text-gray-700">Language</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm font-inter text-gray-700">EN</span>
+                <Switch
+                  checked={language === 'el'}
+                  onCheckedChange={toggleLanguage}
+                  className="data-[state=checked]:bg-aegean-600"
+                />
+                <span className="text-sm font-inter text-gray-700">EL</span>
+              </div>
+            </div>
           </nav>
         )}
       </div>

@@ -1,7 +1,9 @@
 
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Gallery = () => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -25,10 +27,10 @@ const Gallery = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Gallery
+            {t('gallery.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Discover the beauty and elegance of your Mediterranean retreat
+            {t('gallery.subtitle')}
           </p>
 
           {/* Filter Tabs */}
@@ -64,7 +66,7 @@ const Gallery = () => {
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                 <span className="text-white font-inter font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View Image
+                  {t('gallery.view')}
                 </span>
               </div>
             </div>

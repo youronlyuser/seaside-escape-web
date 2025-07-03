@@ -12,8 +12,11 @@ import FAQ from '../components/FAQ';
 import Reviews from '../components/Reviews';
 import RateExperience from '../components/RateExperience';
 import FinalBookingCTA from '../components/FinalBookingCTA';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Index = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -47,34 +50,34 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-playfair text-2xl font-bold mb-4">Seaside Home</h3>
+              <h3 className="font-playfair text-2xl font-bold mb-4">{t('logo')}</h3>
               <p className="font-inter text-gray-300">
-                Your gateway to authentic Greek island luxury. Experience the magic of the Aegean Sea.
+                {t('footer.description')}
               </p>
             </div>
             <div>
-              <h4 className="font-inter font-semibold mb-4">Quick Links</h4>
+              <h4 className="font-inter font-semibold mb-4">{t('footer.links')}</h4>
               <ul className="space-y-2 font-inter text-gray-300">
-                <li><button onClick={() => document.querySelector('#host')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">Your Host</button></li>
-                <li><button onClick={() => document.querySelector('#villa')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">The Villa</button></li>
-                <li><button onClick={() => document.querySelector('#gallery')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">Gallery</button></li>
-                <li><button onClick={() => document.querySelector('#explore')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">Explore</button></li>
+                <li><button onClick={() => document.querySelector('#host')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">{t('nav.host')}</button></li>
+                <li><button onClick={() => document.querySelector('#villa')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">{t('nav.villa')}</button></li>
+                <li><button onClick={() => document.querySelector('#gallery')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">{t('nav.gallery')}</button></li>
+                <li><button onClick={() => document.querySelector('#explore')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">{t('nav.explore')}</button></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-inter font-semibold mb-4">Book Your Stay</h4>
+              <h4 className="font-inter font-semibold mb-4">{t('footer.book')}</h4>
               <div className="space-y-3">
                 <button className="block w-full bg-aegean-600 hover:bg-aegean-700 text-white font-inter font-semibold px-4 py-2 rounded-lg transition-colors">
-                  Book on Airbnb
+                  {t('cta.airbnb')}
                 </button>
                 <button className="block w-full bg-olive-600 hover:bg-olive-700 text-white font-inter font-semibold px-4 py-2 rounded-lg transition-colors">
-                  Book on Booking.com
+                  {t('cta.booking')}
                 </button>
               </div>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center font-inter text-gray-400">
-            <p>&copy; 2024 Seaside Home. All rights reserved.</p>
+            <p>{t('footer.copyright')}</p>
           </div>
         </div>
       </footer>

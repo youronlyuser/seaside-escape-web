@@ -1,7 +1,10 @@
 
 import { Instagram } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FinalBookingCTA = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-gradient-to-br from-aegean-600 to-aegean-800 text-white relative overflow-hidden">
       {/* Background texture */}
@@ -17,29 +20,29 @@ const FinalBookingCTA = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
-            Book Your Stay Today
+            {t('cta.title')}
           </h2>
           <p className="font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8">
-            Your Greek island escape awaits. Create memories that will last a lifetime in our beautiful Seaside Home.
+            {t('cta.subtitle')}
           </p>
           <div className="text-sand-200 font-inter text-lg mb-8">
-            Available year-round • Instant booking • Best rate guaranteed
+            {t('cta.available')}
           </div>
         </div>
 
         {/* Booking Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <button className="bg-white text-aegean-800 hover:bg-sand-50 font-inter font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Book on Airbnb
+            {t('cta.airbnb')}
           </button>
           <button className="bg-sand-500 hover:bg-sand-600 text-white font-inter font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Book on Booking.com
+            {t('cta.booking')}
           </button>
         </div>
 
         {/* Social Media Icons */}
         <div className="text-center">
-          <p className="font-inter text-sand-200 mb-6">Follow our journey</p>
+          <p className="font-inter text-sand-200 mb-6">{t('cta.follow')}</p>
           <div className="flex justify-center gap-6">
             <a 
               href="#" 
@@ -69,7 +72,7 @@ const FinalBookingCTA = () => {
         {/* Contact Info */}
         <div className="text-center mt-12 pt-8 border-t border-white/20">
           <p className="font-inter text-sand-200">
-            Questions? Contact us at{' '}
+            {t('cta.contact')}{' '}
             <a href="mailto:hello@seasidehome-greece.com" className="text-white hover:text-sand-200 transition-colors duration-300">
               hello@seasidehome-greece.com
             </a>

@@ -1,12 +1,15 @@
 
 import { Bed, Car, Wifi, Heart } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const StayOverview = () => {
+  const { t } = useLanguage();
+
   const features = [
-    { icon: Bed, label: "3 Bedrooms", description: "Sleeps 6 guests" },
-    { icon: Car, label: "2 Bathrooms", description: "Modern amenities" },
-    { icon: Wifi, label: "Private Pool", description: "Sea view infinity pool" },
-    { icon: Heart, label: "Concierge", description: "24/7 support" },
+    { icon: Bed, label: t('overview.bedrooms'), description: t('overview.bedrooms.desc') },
+    { icon: Car, label: t('overview.bathrooms'), description: t('overview.bathrooms.desc') },
+    { icon: Wifi, label: t('overview.pool'), description: t('overview.pool.desc') },
+    { icon: Heart, label: t('overview.concierge'), description: t('overview.concierge.desc') },
   ];
 
   return (
@@ -14,10 +17,10 @@ const StayOverview = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Your Greek Island Sanctuary
+            {t('overview.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Every detail designed for your comfort and Mediterranean relaxation
+            {t('overview.subtitle')}
           </p>
         </div>
 

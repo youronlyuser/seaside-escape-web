@@ -1,7 +1,10 @@
 
 import { Star } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HostIntroduction = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="host" className="py-20 bg-gradient-to-br from-sand-50 to-white">
       <div className="container mx-auto px-4">
@@ -27,16 +30,13 @@ const HostIntroduction = () => {
             {/* Host Information */}
             <div className="text-center md:text-left">
               <h2 className="font-playfair text-4xl font-bold text-gray-800 mb-4">
-                Meet Sarah, Your Host
+                {t('host.title')}
               </h2>
               <p className="font-inter text-lg text-gray-600 mb-6 leading-relaxed">
-                Yamas! I'm Sarah, and I've been sharing the magic of Greek island life with travelers 
-                for over 8 years. Born and raised here, I know all the hidden gems and secret spots 
-                that will make your stay unforgettable.
+                {t('host.greeting')}
               </p>
               <p className="font-inter text-lg text-gray-600 mb-8 leading-relaxed">
-                From the best sunset viewpoints to authentic tavernas locals love, I'm here to ensure 
-                your Greek island dream becomes reality. Welcome to our slice of paradise!
+                {t('host.description')}
               </p>
               
               <div className="flex items-center justify-center md:justify-start space-x-4">
@@ -45,11 +45,11 @@ const HostIntroduction = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="font-inter text-gray-700 font-medium">Airbnb Superhost</span>
+                <span className="font-inter text-gray-700 font-medium">{t('host.superhost')}</span>
               </div>
               
               <button className="mt-6 bg-aegean-600 hover:bg-aegean-700 text-white font-inter font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-                View Airbnb Profile
+                {t('host.cta')}
               </button>
             </div>
           </div>

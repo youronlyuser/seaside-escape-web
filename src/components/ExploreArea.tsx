@@ -1,7 +1,10 @@
 
 import { MapPin, Download } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ExploreArea = () => {
+  const { t } = useLanguage();
+
   const attractions = [
     {
       title: "Local Beaches",
@@ -39,9 +42,9 @@ const ExploreArea = () => {
   ];
 
   const downloads = [
-    { name: "Area Map", icon: MapPin },
-    { name: "Local Guide", icon: Download },
-    { name: "House Manual", icon: Download }
+    { name: t('explore.map'), icon: MapPin },
+    { name: t('explore.guide'), icon: Download },
+    { name: t('explore.manual'), icon: Download }
   ];
 
   return (
@@ -72,17 +75,17 @@ const ExploreArea = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Explore the Area
+            {t('explore.title')}
           </h2>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover the authentic charm of Greek island life just steps from your door
+            {t('explore.subtitle')}
           </p>
         </div>
 
         {/* Attractions */}
         <div className="mb-16">
           <h3 className="font-playfair text-3xl font-bold text-gray-800 mb-8 text-center">
-            Natural Wonders
+            {t('explore.attractions')}
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {attractions.map((attraction, index) => (
@@ -110,7 +113,7 @@ const ExploreArea = () => {
         {/* Restaurants */}
         <div className="mb-16">
           <h3 className="font-playfair text-3xl font-bold text-gray-800 mb-8 text-center">
-            Nearby Restaurants
+            {t('explore.restaurants')}
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {restaurants.map((restaurant, index) => (
@@ -136,7 +139,7 @@ const ExploreArea = () => {
         {/* Downloads */}
         <div className="text-center">
           <h3 className="font-playfair text-3xl font-bold text-gray-800 mb-8">
-            Helpful Resources
+            {t('explore.resources')}
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {downloads.map((download, index) => (
@@ -145,7 +148,7 @@ const ExploreArea = () => {
                 className="flex items-center gap-3 bg-aegean-600 hover:bg-aegean-700 text-white font-inter font-semibold px-6 py-3 rounded-full transition-colors duration-300"
               >
                 <download.icon className="w-5 h-5" />
-                Download {download.name}
+                {t('explore.download')} {download.name}
               </button>
             ))}
           </div>
