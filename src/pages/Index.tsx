@@ -5,6 +5,13 @@ import HostIntroduction from '../components/HostIntroduction';
 import StayOverview from '../components/StayOverview';
 import Amenities from '../components/Amenities';
 import Gallery from '../components/Gallery';
+import EnjoyYourStay from '../components/EnjoyYourStay';
+import ExploreArea from '../components/ExploreArea';
+import RentalServices from '../components/RentalServices';
+import FAQ from '../components/FAQ';
+import Reviews from '../components/Reviews';
+import RateExperience from '../components/RateExperience';
+import FinalBookingCTA from '../components/FinalBookingCTA';
 
 const Index = () => {
   return (
@@ -15,6 +22,13 @@ const Index = () => {
       <StayOverview />
       <Amenities />
       <Gallery />
+      <EnjoyYourStay />
+      <ExploreArea />
+      <RentalServices />
+      <FAQ />
+      <Reviews />
+      <RateExperience />
+      <FinalBookingCTA />
       
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
