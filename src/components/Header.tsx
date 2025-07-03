@@ -22,6 +22,14 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -33,22 +41,25 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="font-playfair text-2xl font-bold text-aegean-800">
+          <button
+            onClick={() => handleNavClick('#hero')}
+            className="font-playfair text-2xl font-bold text-aegean-800 hover:opacity-80 transition-opacity"
+          >
             Seaside Home
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className={`font-inter font-medium transition-colors duration-200 hover:text-aegean-600 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -73,14 +84,13 @@ const Header = () => {
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-200">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block py-2 font-inter font-medium text-gray-700 hover:text-aegean-600 transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => handleNavClick(item.href)}
+                className="block w-full text-left py-2 font-inter font-medium text-gray-700 hover:text-aegean-600 transition-colors duration-200"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
         )}

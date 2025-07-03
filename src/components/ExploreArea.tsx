@@ -84,28 +84,26 @@ const ExploreArea = () => {
           <h3 className="font-playfair text-3xl font-bold text-gray-800 mb-8 text-center">
             Natural Wonders
           </h3>
-          <div className="overflow-x-auto pb-4">
-            <div className="flex gap-6 scroll-container" style={{ minWidth: 'fit-content' }}>
-              {attractions.map((attraction, index) => (
-                <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={attraction.image} 
-                      alt={attraction.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-playfair text-xl font-bold text-gray-800 mb-2">
-                      {attraction.title}
-                    </h4>
-                    <p className="font-inter text-gray-600">
-                      {attraction.description}
-                    </p>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {attractions.map((attraction, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={attraction.image} 
+                    alt={attraction.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              ))}
-            </div>
+                <div className="p-6">
+                  <h4 className="font-playfair text-xl font-bold text-gray-800 mb-2">
+                    {attraction.title}
+                  </h4>
+                  <p className="font-inter text-gray-600">
+                    {attraction.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

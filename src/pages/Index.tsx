@@ -17,18 +17,30 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <Hero />
-      <HostIntroduction />
-      <StayOverview />
-      <Amenities />
-      <Gallery />
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="host">
+        <HostIntroduction />
+      </div>
+      <div id="villa">
+        <StayOverview />
+        <Amenities />
+      </div>
+      <div id="gallery">
+        <Gallery />
+      </div>
       <EnjoyYourStay />
-      <ExploreArea />
+      <div id="explore">
+        <ExploreArea />
+      </div>
       <RentalServices />
       <FAQ />
       <Reviews />
       <RateExperience />
-      <FinalBookingCTA />
+      <div id="contact">
+        <FinalBookingCTA />
+      </div>
       
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
@@ -43,10 +55,10 @@ const Index = () => {
             <div>
               <h4 className="font-inter font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 font-inter text-gray-300">
-                <li><a href="#host" className="hover:text-white transition-colors">Your Host</a></li>
-                <li><a href="#villa" className="hover:text-white transition-colors">The Villa</a></li>
-                <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
-                <li><a href="#explore" className="hover:text-white transition-colors">Explore</a></li>
+                <li><button onClick={() => document.querySelector('#host')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">Your Host</button></li>
+                <li><button onClick={() => document.querySelector('#villa')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">The Villa</button></li>
+                <li><button onClick={() => document.querySelector('#gallery')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">Gallery</button></li>
+                <li><button onClick={() => document.querySelector('#explore')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">Explore</button></li>
               </ul>
             </div>
             <div>
