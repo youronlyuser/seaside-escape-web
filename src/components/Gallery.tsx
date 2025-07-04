@@ -4,27 +4,26 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Gallery = () => {
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState(t('gallery.all'));
+  const [activeFilter, setActiveFilter] = useState('all');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const filters = [
-    t('gallery.all'),
-    t('gallery.livingroom'),
-    t('gallery.kitchen'),
-    t('gallery.bedroom'),
-    t('gallery.outdoor')
-  ];
+  const filterKeys = ['all', 'livingroom', 'kitchen', 'bedroom', 'outdoor'];
+  
+  const filters = filterKeys.map(key => ({
+    key,
+    label: t(`gallery.${key}`)
+  }));
 
   const images = [
-    { src: 'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: t('gallery.livingroom'), alt: 'Elegant living room with sea views' },
-    { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: t('gallery.kitchen'), alt: 'Modern Mediterranean kitchen' },
-    { src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: t('gallery.bedroom'), alt: 'Serene bedroom with ocean views' },
-    { src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: t('gallery.outdoor'), alt: 'Private pool overlooking the Aegean' },
-    { src: 'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: t('gallery.livingroom'), alt: 'Cozy reading nook' },
-    { src: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: t('gallery.outdoor'), alt: 'Sunset terrace dining' },
+    { src: 'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: 'livingroom', alt: 'Elegant living room with sea views' },
+    { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: 'kitchen', alt: 'Modern Mediterranean kitchen' },
+    { src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: 'bedroom', alt: 'Serene bedroom with ocean views' },
+    { src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: 'outdoor', alt: 'Private pool overlooking the Aegean' },
+    { src: 'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: 'livingroom', alt: 'Cozy reading nook' },
+    { src: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80', category: 'outdoor', alt: 'Sunset terrace dining' },
   ];
 
-  const filteredImages = activeFilter === t('gallery.all')
+  const filteredImages = activeFilter === 'all'
     ? images 
     : images.filter(img => img.category === activeFilter);
 
@@ -43,15 +42,15 @@ const Gallery = () => {
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {filters.map((filter) => (
               <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
+                key={filter.key}
+                onClick={() => setActiveFilter(filter.key)}
                 className={`px-6 py-2 rounded-full font-inter font-medium transition-all duration-300 ${
-                  activeFilter === filter
+                  activeFilter === filter.key
                     ? 'bg-aegean-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                {filter}
+                {filter.label}
               </button>
             ))}
           </div>
